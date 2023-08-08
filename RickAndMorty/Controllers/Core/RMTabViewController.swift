@@ -31,10 +31,10 @@ final class RMTabBarController: UITabBarController {
         let navThree = UINavigationController(rootViewController: episodesVC)
         let navFour = UINavigationController(rootViewController: settingsVC)
         
-        navOne.tabBarItem = UITabBarItem(title: "Characters", image: nil, tag: 1)
-        navTwo.tabBarItem = UITabBarItem(title: "Locations", image: nil, tag: 2)
-        navThree.tabBarItem = UITabBarItem(title: "Episodes", image: nil, tag: 3)
-        navFour.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 4)
+        navOne.tabBarItem = UITabBarItem(title: "Characters", image: UIImage(systemName: "person"), tag: 1)
+        navTwo.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(systemName: "globe"), tag: 2)
+        navThree.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: "tv"), tag: 3)
+        navFour.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 4)
         
         for nav in [navOne, navTwo, navThree, navFour] {
             nav.navigationBar.prefersLargeTitles = true
