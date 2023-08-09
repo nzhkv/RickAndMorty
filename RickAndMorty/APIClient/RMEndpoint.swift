@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// represent unique API endpoint
 @frozen enum RMEndpoint: String {
     case character
     case location
