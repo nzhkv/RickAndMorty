@@ -27,6 +27,8 @@
 		2EAD395F2A83D5AF0069D84A /* RMCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD395E2A83D5AF0069D84A /* RMCharacterStatus.swift */; };
 		2EAD39612A83D5FB0069D84A /* RMCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD39602A83D5FB0069D84A /* RMCharacterGender.swift */; };
 		2EAD39652A84D4510069D84A /* RMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD39642A84D4510069D84A /* RMGetAllCharactersResponse.swift */; };
+		2EAD39672A84F99A0069D84A /* characterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD39662A84F99A0069D84A /* characterListViewViewModel.swift */; };
+		2EAD39692A84FA820069D84A /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD39682A84FA820069D84A /* CharacterListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		2EAD395E2A83D5AF0069D84A /* RMCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterStatus.swift; sourceTree = "<group>"; };
 		2EAD39602A83D5FB0069D84A /* RMCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterGender.swift; sourceTree = "<group>"; };
 		2EAD39642A84D4510069D84A /* RMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharactersResponse.swift; sourceTree = "<group>"; };
+		2EAD39662A84F99A0069D84A /* characterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterListViewViewModel.swift; sourceTree = "<group>"; };
+		2EAD39682A84FA820069D84A /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 		2E556E542A825D4500668DA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2EAD39682A84FA820069D84A /* CharacterListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 		2E556E552A825D5400668DA8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2EAD39662A84F99A0069D84A /* characterListViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EAD395D2A83D41D0069D84A /* RMSingletLocation.swift in Sources */,
+				2EAD39672A84F99A0069D84A /* characterListViewViewModel.swift in Sources */,
+				2EAD39692A84FA820069D84A /* CharacterListView.swift in Sources */,
 				2EAD395B2A83D2C70069D84A /* RMOrigin.swift in Sources */,
 				2EAD39652A84D4510069D84A /* RMGetAllCharactersResponse.swift in Sources */,
 				2EAD395F2A83D5AF0069D84A /* RMCharacterStatus.swift in Sources */,
