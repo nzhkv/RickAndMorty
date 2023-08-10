@@ -5,9 +5,9 @@
 //  Created by Nikolay Zhukov on 10.08.2023.
 //
 
-import Foundation
+import UIKit
 
-struct CharacterListViewViewModel {
+final class CharacterListViewViewModel: NSObject {
     
     func fetchCharacters() {
         RMService.shared.execute(.listCharactersRequest, expecting: RMGetAllCharactersResponse.self) { result in
@@ -20,4 +20,24 @@ struct CharacterListViewViewModel {
             }
         }
     }
+}
+
+extension CharacterListViewViewModel: UICollectionViewDataSource, UICalendarViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .systemCyan
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let bonds = UIScreen.main.bounds
+        let width = (bonds.width - 30) / 2
+        return CGSize(width: width, height: width * 1.5)
+    }
+    
+    
 }

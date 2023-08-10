@@ -29,6 +29,7 @@
 		2EAD39652A84D4510069D84A /* RMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD39642A84D4510069D84A /* RMGetAllCharactersResponse.swift */; };
 		2EAD39672A84F99A0069D84A /* characterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD39662A84F99A0069D84A /* characterListViewViewModel.swift */; };
 		2EAD39692A84FA820069D84A /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD39682A84FA820069D84A /* CharacterListView.swift */; };
+		2EAD396B2A85036B0069D84A /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD396A2A85036B0069D84A /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		2EAD39642A84D4510069D84A /* RMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharactersResponse.swift; sourceTree = "<group>"; };
 		2EAD39662A84F99A0069D84A /* characterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterListViewViewModel.swift; sourceTree = "<group>"; };
 		2EAD39682A84FA820069D84A /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		2EAD396A2A85036B0069D84A /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				2E556E492A825A1100668DA8 /* LaunchScreen.storyboard */,
 				2E556E3E2A825A1000668DA8 /* AppDelegate.swift */,
 				2E556E402A825A1000668DA8 /* SceneDelegate.swift */,
+				2EAD396A2A85036B0069D84A /* Extentions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				2E556E5C2A825E6F00668DA8 /* RMCharacter.swift in Sources */,
 				2EAD39572A83C23D0069D84A /* RMRequest.swift in Sources */,
 				2E556E612A825FC800668DA8 /* RMCharacterViewController.swift in Sources */,
+				2EAD396B2A85036B0069D84A /* Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
