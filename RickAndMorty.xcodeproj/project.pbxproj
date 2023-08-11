@@ -32,6 +32,7 @@
 		2EAD396B2A85036B0069D84A /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD396A2A85036B0069D84A /* Extentions.swift */; };
 		2EAD396D2A850FA70069D84A /* RMCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD396C2A850FA70069D84A /* RMCharacterCollectionViewCell.swift */; };
 		2EAD396F2A8511A50069D84A /* RMCharacterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD396E2A8511A50069D84A /* RMCharacterCollectionViewCellViewModel.swift */; };
+		2EAD39722A86663F0069D84A /* RMCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD39712A86663F0069D84A /* RMCharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		2EAD396A2A85036B0069D84A /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		2EAD396C2A850FA70069D84A /* RMCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		2EAD396E2A8511A50069D84A /* RMCharacterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		2EAD39712A86663F0069D84A /* RMCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		2E556E522A825D2300668DA8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2EAD39702A8666020069D84A /* Other */,
 				2E556E5F2A825F4700668DA8 /* Core */,
 			);
 			path = Controllers;
@@ -204,6 +207,14 @@
 			path = ApiResponseTypes;
 			sourceTree = "<group>";
 		};
+		2EAD39702A8666020069D84A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2EAD39712A86663F0069D84A /* RMCharacterDetailViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +291,7 @@
 				2EAD395B2A83D2C70069D84A /* RMOrigin.swift in Sources */,
 				2EAD39652A84D4510069D84A /* RMGetAllCharactersResponse.swift in Sources */,
 				2EAD395F2A83D5AF0069D84A /* RMCharacterStatus.swift in Sources */,
+				2EAD39722A86663F0069D84A /* RMCharacterDetailViewController.swift in Sources */,
 				2EAD39612A83D5FB0069D84A /* RMCharacterGender.swift in Sources */,
 				2E556E652A82601100668DA8 /* RMEpisodesViewController.swift in Sources */,
 				2E556E632A825FFE00668DA8 /* RMLocationsViewController.swift in Sources */,
