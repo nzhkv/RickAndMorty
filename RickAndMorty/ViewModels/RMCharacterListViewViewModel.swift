@@ -31,13 +31,17 @@ final class RMCharacterListViewViewModel: NSObject {
     
     private var cellViewModels: [RMCharacterCollectionViewCellViewModel] = []
     
+    private var apiInfo: RMGetAllCharactersResponse.info? = nil
+    
+    /// fetch initial set of characters (20)
     public func fetchCharacters() {
         RMService.shared.execute(.listCharactersRequest, expecting: RMGetAllCharactersResponse.self) { [weak self] result in
             switch result {
             case .success(let responseModel):
                 let results = responseModel.results
+                let info = responseModel.info
                 self?.characters = results
-                
+                self?.apiInfo = info
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadInitialCharacters()
                 }
@@ -46,6 +50,15 @@ final class RMCharacterListViewViewModel: NSObject {
                 print(String(describing: error))
             }
         }
+    }
+    
+    /// paginate if additional characters are needed
+    public func fetchAdditionalCharacters() {
+        
+    }
+    
+    public var shouldShowLoadMoreIndicator: Bool {
+        return apiInfo?.next != nil
     }
 }
 
@@ -76,4 +89,11 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICalendarVi
         delegate?.didSelectCharacter(character)
     }
     
+}
+
+//MARK: - ScrollView
+extension RMCharacterListViewViewModel: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
 }

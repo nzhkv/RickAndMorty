@@ -17,6 +17,15 @@ final class RMCharacterViewController: UIViewController, RMCharacterListViewDele
         view.backgroundColor = .systemBackground
         title = "Characters"
         setUpView()
+        test()
+    }
+    
+    func test() {
+        print(1)
+        DispatchQueue.main.async {
+            print(2)
+        }
+        print(3)
     }
     
     private func setUpView() {
