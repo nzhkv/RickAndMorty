@@ -21,11 +21,7 @@ final class RMCharacterViewController: UIViewController, RMCharacterListViewDele
     }
     
     func test() {
-        print(1)
-        DispatchQueue.main.async {
-            print(2)
-        }
-        print(3)
+        
     }
     
     private func setUpView() {
