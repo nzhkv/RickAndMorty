@@ -77,6 +77,18 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICalendarVi
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionFooter else {
+            return UICollectionReusableView()
+        }
+        
+        let footer = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier,
+            for: indexPath)
+        return footer
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let bonds = UIScreen.main.bounds
         let width = (bonds.width - 30) / 2
