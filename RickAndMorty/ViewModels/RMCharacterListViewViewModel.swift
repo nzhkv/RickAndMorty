@@ -58,7 +58,7 @@ final class RMCharacterListViewViewModel: NSObject {
     }
     
     public var shoudShowLoadMoreIndicator: Bool {
-        return apiInfo?.next != nil
+        return false //apiInfo?.next != nil
     }
 }
 
@@ -78,8 +78,8 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICalendarVi
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard kind == UICollectionView.elementKindSectionFooter else {
-            return UICollectionReusableView()
+        guard kind == UICollectionView.elementKindSectionFooter, shoudShowLoadMoreIndicator else {
+            fatalError("unsupported")
         }
         
         let footer = collectionView.dequeueReusableSupplementaryView(
@@ -90,6 +90,9 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICalendarVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        guard shoudShowLoadMoreIndicator else {
+            return .zero
+        }
         return CGSize(width: collectionView.frame.width, height: 100)
     }
     
