@@ -16,6 +16,8 @@ final class RMCharacterListViewViewModel: NSObject {
     
     public weak var delegate: RMCharacterListViewViewModelDelegate?
     
+    private var isLoadingMoreChatacters = false
+    
     private var characters: [RMCharacter] = [] {
         didSet {
             for character in characters {
@@ -54,7 +56,7 @@ final class RMCharacterListViewViewModel: NSObject {
     
     /// paginate if additional characters are needed
     public func fetchAdditionalCharacters() {
-        
+        isLoadingMoreChatacters = true
     }
     
     public var shoudShowLoadMoreIndicator: Bool {
@@ -113,6 +115,14 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICalendarVi
 //MARK: - ScrollView
 extension RMCharacterListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard shoudShowLoadMoreIndicator, !isLoadingMoreChatacters else { return }
         
+        let offset = scrollView.contentOffset.y
+        let totalContetntHeight = scrollView.contentSize.height
+        let totalScrollViewFixedHeight = scrollView.frame.size.height
+        
+        if offset >= (totalContetntHeight - totalScrollViewFixedHeight - 120) {
+            fetchAdditionalCharacters()
+        }
     }
 }
