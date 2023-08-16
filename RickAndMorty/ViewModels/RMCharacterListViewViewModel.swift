@@ -57,7 +57,19 @@ final class RMCharacterListViewViewModel: NSObject {
     /// paginate if additional characters are needed
     public func fetchAdditionalCharacters(url: URL) {
         isLoadingMoreChatacters = true
-        RMService.shared.execute(<#T##request: RMRequest##RMRequest#>, expecting: <#T##(Decodable & Encodable).Protocol#>, completion: <#T##(Result<Decodable & Encodable, Error>) -> Void#>)
+        guard let request = RMRequest(url: url) else {
+            isLoadingMoreChatacters = false
+            return
+        }
+        
+        RMService.shared.execute(request, expecting: RMGetAllCharactersResponse.self) { result in
+            switch result {
+            case .success(let success):
+                print(String(describing: success))
+            case .failure(let failure):
+                print(String(describing: failure))
+            }
+        }
     }
     
     public var shoudShowLoadMoreIndicator: Bool {
