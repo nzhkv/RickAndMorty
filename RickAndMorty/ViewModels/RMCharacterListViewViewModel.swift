@@ -56,9 +56,12 @@ final class RMCharacterListViewViewModel: NSObject {
     
     /// paginate if additional characters are needed
     public func fetchAdditionalCharacters(url: URL) {
+        guard !isLoadingMoreChatacters else { return }
         isLoadingMoreChatacters = true
+        print("Fetching more characters")
         guard let request = RMRequest(url: url) else {
             isLoadingMoreChatacters = false
+            print("Failed to create request")
             return
         }
         
@@ -130,17 +133,20 @@ extension RMCharacterListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard shoudShowLoadMoreIndicator,
               !isLoadingMoreChatacters,
+              !cellViewModels.isEmpty,
               let nextUrlString = apiInfo?.next,
               let url = URL(string: nextUrlString) else {
             return
         }
-        
-        let offset = scrollView.contentOffset.y
-        let totalContetntHeight = scrollView.contentSize.height
-        let totalScrollViewFixedHeight = scrollView.frame.size.height
-        
-        if offset >= (totalContetntHeight - totalScrollViewFixedHeight - 120) {
-            fetchAdditionalCharacters(url: url)
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { t in
+            let offset = scrollView.contentOffset.y
+            let totalContetntHeight = scrollView.contentSize.height
+            let totalScrollViewFixedHeight = scrollView.frame.size.height
+            
+            if offset >= (totalContetntHeight - totalScrollViewFixedHeight - 120) {
+                self.fetchAdditionalCharacters(url: url)
+            }
+            t.invalidate()
         }
     }
 }
