@@ -55,8 +55,9 @@ final class RMCharacterListViewViewModel: NSObject {
     }
     
     /// paginate if additional characters are needed
-    public func fetchAdditionalCharacters() {
+    public func fetchAdditionalCharacters(url: URL) {
         isLoadingMoreChatacters = true
+        RMService.shared.execute(<#T##request: RMRequest##RMRequest#>, expecting: <#T##(Decodable & Encodable).Protocol#>, completion: <#T##(Result<Decodable & Encodable, Error>) -> Void#>)
     }
     
     public var shoudShowLoadMoreIndicator: Bool {
@@ -115,14 +116,19 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICalendarVi
 //MARK: - ScrollView
 extension RMCharacterListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard shoudShowLoadMoreIndicator, !isLoadingMoreChatacters else { return }
+        guard shoudShowLoadMoreIndicator,
+              !isLoadingMoreChatacters,
+              let nextUrlString = apiInfo?.next,
+              let url = URL(string: nextUrlString) else {
+            return
+        }
         
         let offset = scrollView.contentOffset.y
         let totalContetntHeight = scrollView.contentSize.height
         let totalScrollViewFixedHeight = scrollView.frame.size.height
         
         if offset >= (totalContetntHeight - totalScrollViewFixedHeight - 120) {
-            fetchAdditionalCharacters()
+            fetchAdditionalCharacters(url: url)
         }
     }
 }

@@ -67,6 +67,14 @@ final class RMRequest {
         self.pathComponents = pathComponents
         self.querryParametrs = querryParametrs
     }
+    
+    convenience init?(url: URL) {
+        let string = url.absoluteString
+        if !string.contains(Constants.baseUrl) {
+            return nil
+        }
+        let trimmed = string.replacingOccurrences(of: Constants.baseUrl+"/", with: "")
+    }
 }
 
 extension RMRequest {
